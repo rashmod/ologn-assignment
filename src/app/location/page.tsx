@@ -1,9 +1,10 @@
-import { Suspense } from "react";
-import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import Link from "next/link";
+import { Suspense } from "react";
 
-import Weather from "@/components/custom/Weather";
+import Loader from "@/components/custom/Loader";
 import Search from "@/components/custom/Search";
+import Weather from "@/components/custom/Weather";
 
 export default function Page({
   searchParams,
@@ -20,7 +21,7 @@ export default function Page({
           <ChevronLeft /> Back
         </Link>
         <Search />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Weather localityId={searchParams?.locality || ""} />
         </Suspense>
       </section>

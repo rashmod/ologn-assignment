@@ -5,7 +5,6 @@ import {
   Compass,
   Droplets,
   Thermometer,
-  Waves,
   Wind,
 } from "lucide-react";
 
