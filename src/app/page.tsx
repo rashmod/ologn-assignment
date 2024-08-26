@@ -1,6 +1,5 @@
 import Search from "@/components/custom/Search";
 
-
 export default function Home() {
   return (
     <main className="container flex min-h-screen items-center justify-center">
