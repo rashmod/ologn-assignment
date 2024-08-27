@@ -12,7 +12,7 @@ export default function Page({
   searchParams?: { locality?: string };
 }) {
   return (
-    <main className="container flex min-h-screen flex-col items-center justify-center">
+    <main className="container flex min-h-dvh flex-col items-center justify-center">
       <section className="flex flex-1 flex-col gap-4 py-10">
         <Link
           href="/"

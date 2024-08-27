@@ -28,7 +28,7 @@ export default function Search() {
   return (
     <Command className="h-11 overflow-visible rounded-lg border shadow-md md:min-w-[450px]">
       <CommandInput
-        placeholder="Type a command or search..."
+        placeholder="Search for a location..."
         value={input}
         onValueChange={setInput}
       />
