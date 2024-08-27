@@ -5,12 +5,15 @@ import { Suspense } from "react";
 import Loader from "@/components/custom/Loader";
 import Search from "@/components/custom/Search";
 import Weather from "@/components/custom/Weather";
+import getLocalityList from "@/utils/getLocalityList";
 
-export default function Page({
+export default async function Page({
   searchParams,
 }: {
   searchParams?: { locality?: string };
 }) {
+  const localityList = await getLocalityList();
+
   return (
     <main className="container flex min-h-dvh flex-col items-center justify-center">
       <section className="flex flex-1 flex-col gap-4 py-10">
@@ -20,9 +23,12 @@ export default function Page({
         >
           <ChevronLeft /> Back
         </Link>
-        <Search />
+        <Search localityList={localityList} />
         <Suspense fallback={<Loader />}>
-          <Weather localityId={searchParams?.locality || ""} />
+          <Weather
+            localityId={searchParams?.locality || ""}
+            localityList={localityList}
+          />
         </Suspense>
       </section>
     </main>

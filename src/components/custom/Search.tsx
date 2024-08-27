@@ -11,10 +11,9 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import { Locality } from "@/utils/getLocality";
 
-import data from "@/data/locality.json";
-
-export default function Search() {
+export default function Search({ localityList }: { localityList: Locality[] }) {
   const [input, setInput] = useState("");
   const router = useRouter();
 
@@ -43,7 +42,7 @@ export default function Search() {
                 </div>
               </CommandEmpty>
               <CommandGroup className="relative z-50 h-[200px] min-w-[8rem] overflow-hidden rounded-md border bg-background shadow-md">
-                {data.map((result, i) => (
+                {localityList.map((result, i) => (
                   <CommandItem
                     key={i}
                     onSelect={() => handleSelect(result.localityId)}
